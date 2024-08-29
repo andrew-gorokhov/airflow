@@ -33,7 +33,7 @@ dag = DAG(
     'pascal',
     default_args=default_args,
     description='A simple DAG to print Pascal\'s Triangle',
-    schedule_interval='44 11 * * *',
+    schedule_interval='44 08 * * *',
     start_date=datetime(2024, 8, 29),
     catchup=False,
 )
