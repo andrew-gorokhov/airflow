@@ -1,6 +1,11 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
+import logging
+
+# Настройка логирования
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
 def generate_pascals_triangle(n):
     triangle = [[1]]
@@ -33,7 +38,7 @@ dag = DAG(
     'pascal',
     default_args=default_args,
     description='A simple DAG to print Pascal\'s Triangle',
-    schedule_interval='44 08 * * *',
+    schedule_interval='44 11 * * *',
     start_date=datetime(2024, 8, 29),
     catchup=False,
 )
